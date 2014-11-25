@@ -1,0 +1,6 @@
+C:\Users\LE_STER\Desktop\Hash\ConsoleApplication1\ConsoleApplication1\bin\Release\HashMan.dll.config
+C:\Users\LE_STER\Desktop\Hash\ConsoleApplication1\ConsoleApplication1\bin\Release\HashMan.dll
+C:\Users\LE_STER\Desktop\Hash\ConsoleApplication1\ConsoleApplication1\bin\Release\HashMan.pdb
+C:\Users\LE_STER\Desktop\Hash\ConsoleApplication1\ConsoleApplication1\obj\Release\HashMe.csprojResolveAssemblyReference.cache
+C:\Users\LE_STER\Desktop\Hash\ConsoleApplication1\ConsoleApplication1\obj\Release\HashMan.dll
+C:\Users\LE_STER\Desktop\Hash\ConsoleApplication1\ConsoleApplication1\obj\Release\HashMan.pdb

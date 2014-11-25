@@ -1,0 +1,12 @@
+C:\Users\LE_STER\Desktop\Projets\CheckDatPlace\ChechDatPlace\CDP.BLL\obj\Debug\CDP.BLL.csprojResolveAssemblyReference.cache
+C:\Users\LE_STER\Desktop\Projets\CheckDatPlace\ChechDatPlace\CDP.BLL\bin\Debug\CDP.BLL.dll
+C:\Users\LE_STER\Desktop\Projets\CheckDatPlace\ChechDatPlace\CDP.BLL\bin\Debug\CDP.BLL.pdb
+C:\Users\LE_STER\Desktop\Projets\CheckDatPlace\ChechDatPlace\CDP.BLL\bin\Debug\CDP.DAL.dll
+C:\Users\LE_STER\Desktop\Projets\CheckDatPlace\ChechDatPlace\CDP.BLL\bin\Debug\CDP.Models.dll
+C:\Users\LE_STER\Desktop\Projets\CheckDatPlace\ChechDatPlace\CDP.BLL\bin\Debug\ConsoleApplication1.dll
+C:\Users\LE_STER\Desktop\Projets\CheckDatPlace\ChechDatPlace\CDP.BLL\bin\Debug\EntityFramework.dll
+C:\Users\LE_STER\Desktop\Projets\CheckDatPlace\ChechDatPlace\CDP.BLL\bin\Debug\CDP.DAL.pdb
+C:\Users\LE_STER\Desktop\Projets\CheckDatPlace\ChechDatPlace\CDP.BLL\bin\Debug\CDP.Models.pdb
+C:\Users\LE_STER\Desktop\Projets\CheckDatPlace\ChechDatPlace\CDP.BLL\bin\Debug\EntityFramework.xml
+C:\Users\LE_STER\Desktop\Projets\CheckDatPlace\ChechDatPlace\CDP.BLL\obj\Debug\CDP.BLL.dll
+C:\Users\LE_STER\Desktop\Projets\CheckDatPlace\ChechDatPlace\CDP.BLL\obj\Debug\CDP.BLL.pdb

@@ -1,0 +1,6 @@
+C:\Users\LE_STER\Desktop\DTF\DirectoryToList\DirectoryToList\bin\Debug\DirectoryToList.exe.config
+C:\Users\LE_STER\Desktop\DTF\DirectoryToList\DirectoryToList\bin\Debug\DirectoryToList.exe
+C:\Users\LE_STER\Desktop\DTF\DirectoryToList\DirectoryToList\bin\Debug\DirectoryToList.pdb
+C:\Users\LE_STER\Desktop\DTF\DirectoryToList\DirectoryToList\obj\Debug\DirectoryToList.csprojResolveAssemblyReference.cache
+C:\Users\LE_STER\Desktop\DTF\DirectoryToList\DirectoryToList\obj\Debug\DirectoryToList.exe
+C:\Users\LE_STER\Desktop\DTF\DirectoryToList\DirectoryToList\obj\Debug\DirectoryToList.pdb

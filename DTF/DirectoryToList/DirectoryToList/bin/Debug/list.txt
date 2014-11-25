@@ -1,0 +1,14 @@
+
+******** Files ******** 
+
+ChatApi.sln
+ChatApi.v11.suo
+
+******** Dossier ******** 
+
+ChatApi
+ChatApi.Bll
+ChatApi.Client
+ChatApi.Dal
+ChatApi.Model
+packages

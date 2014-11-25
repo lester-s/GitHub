@@ -1,0 +1,7 @@
+C:\Users\LE_STER\Desktop\DTF\DirectoryToList\DirectoryToList\bin\Release\DirectoryToList.exe.config
+C:\Users\LE_STER\Desktop\DTF\DirectoryToList\DirectoryToList\bin\Release\DirectoryToList.exe
+C:\Users\LE_STER\Desktop\DTF\DirectoryToList\DirectoryToList\bin\Release\DirectoryToList.pdb
+C:\Users\LE_STER\Desktop\DTF\DirectoryToList\DirectoryToList\obj\Release\DirectoryToList.exe
+C:\Users\LE_STER\Desktop\DTF\DirectoryToList\DirectoryToList\obj\Release\DirectoryToList.pdb
+C:\Users\LE_STER\Desktop\DTF\DirectoryToList\DirectoryToList\obj\Release\DirectoryToList.csprojResolveAssemblyReference.cache
+C:\Users\LE_STER\Desktop\DTF\DirectoryToList\DirectoryToList\bin\Release\ConsoleApplication1.dll
