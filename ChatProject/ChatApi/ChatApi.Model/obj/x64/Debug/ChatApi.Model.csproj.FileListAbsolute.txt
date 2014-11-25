@@ -1,0 +1,4 @@
+C:\Users\LE_STER\Desktop\ChatProject\ChatApi\ChatApi.Model\bin\x64\Debug\ChatApi.Model.dll
+C:\Users\LE_STER\Desktop\ChatProject\ChatApi\ChatApi.Model\bin\x64\Debug\ChatApi.Model.pdb
+C:\Users\LE_STER\Desktop\ChatProject\ChatApi\ChatApi.Model\obj\x64\Debug\ChatApi.Model.dll
+C:\Users\LE_STER\Desktop\ChatProject\ChatApi\ChatApi.Model\obj\x64\Debug\ChatApi.Model.pdb

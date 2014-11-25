@@ -1,0 +1,6 @@
+C:\Users\LE_STER\Desktop\ChatProject\ChatApi\ChatApi.Model\bin\Release\ChatApi.Model.dll
+C:\Users\LE_STER\Desktop\ChatProject\ChatApi\ChatApi.Model\bin\Release\ChatApi.Model.pdb
+C:\Users\LE_STER\Desktop\ChatProject\ChatApi\ChatApi.Model\bin\Release\ChatApi.Model.dll.CodeAnalysisLog.xml
+C:\Users\LE_STER\Desktop\ChatProject\ChatApi\ChatApi.Model\bin\Release\ChatApi.Model.dll.lastcodeanalysissucceeded
+C:\Users\LE_STER\Desktop\ChatProject\ChatApi\ChatApi.Model\obj\Release\ChatApi.Model.dll
+C:\Users\LE_STER\Desktop\ChatProject\ChatApi\ChatApi.Model\obj\Release\ChatApi.Model.pdb

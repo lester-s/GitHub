@@ -1,0 +1,7 @@
+C:\Users\LE_STER\Desktop\ChatProject\ChatApi\ChatApi.Dal\bin\Debug\ChatApi.Dal.dll
+C:\Users\LE_STER\Desktop\ChatProject\ChatApi\ChatApi.Dal\bin\Debug\ChatApi.Dal.pdb
+C:\Users\LE_STER\Desktop\ChatProject\ChatApi\ChatApi.Dal\bin\Debug\ChatApi.Model.dll
+C:\Users\LE_STER\Desktop\ChatProject\ChatApi\ChatApi.Dal\bin\Debug\ChatApi.Model.pdb
+C:\Users\LE_STER\Desktop\ChatProject\ChatApi\ChatApi.Dal\obj\Debug\ChatApi.Dal.csprojResolveAssemblyReference.cache
+C:\Users\LE_STER\Desktop\ChatProject\ChatApi\ChatApi.Dal\obj\Debug\ChatApi.Dal.dll
+C:\Users\LE_STER\Desktop\ChatProject\ChatApi\ChatApi.Dal\obj\Debug\ChatApi.Dal.pdb
