@@ -17,13 +17,20 @@ namespace ChechDatPlace.Controllers
         public HttpResponseMessage CreateOnePlace(Place newPlace)
         {
             HttpResponseMessage response;
+            var creds = this.Request.Headers.Where(i => i.Key == "Credentials").FirstOrDefault().Value;
+            if (Service.UserServices.AuthorizeUser(creds, CDPEnum.UserLevel.normal))
+            {
+                var result = Service.PlaceServices.CreateOnePlace(newPlace);
 
-            var result = Service.PlaceServices.CreateOnePlace(newPlace);
+                response = this.Request.CreateResponse(result.Status);
 
-            response = this.Request.CreateResponse(result.Status);
-
-            response.Content = new StringContent(result.Message);
-
+                response.Content = new StringContent(result.Message);
+            }
+            else
+            {
+                response = this.Request.CreateResponse(HttpStatusCode.Forbidden);
+                response.Content = new StringContent("You are not allowed to perform this action.");
+            }
             return response;
         }
         #endregion
@@ -33,6 +40,7 @@ namespace ChechDatPlace.Controllers
         [HttpGet]
         public List<Place> GetPlaceByUser(int userId)
         {
+            //TODO return a HttpMessageResponse
             return Service.PlaceServices.GetPlaceByUser(userId);
         }
         #endregion

@@ -84,7 +84,7 @@ namespace ChechDatPlace.Controllers
         {
             HttpResponseMessage response;
             var creds = this.Request.Headers.Where(i => i.Key == "Credentials").FirstOrDefault().Value;
-            if (Service.UserServices.AuthorizeUser(creds, CDPEnum.UserLevel.normal))
+            if (Service.UserServices.AuthorizeUser(creds, CDPEnum.UserLevel.admin))
             {
                 var result = Service.UserServices.DeleteAllUsers();
 
