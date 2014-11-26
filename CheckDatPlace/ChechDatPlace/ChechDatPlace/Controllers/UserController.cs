@@ -20,7 +20,6 @@ namespace ChechDatPlace.Controllers
         public HttpResponseMessage CreateOneUser(User newUser)
         {
             HttpResponseMessage response;
-
             var result = Service.UserServices.CreateOneUser(newUser);
 
             response = this.Request.CreateResponse(result.Status);
@@ -48,7 +47,7 @@ namespace ChechDatPlace.Controllers
                 response = this.Request.CreateResponse(HttpStatusCode.Forbidden);
                 response.Content = new StringContent("You are not allowed to perform this action.");
             }
-            
+
             return response;
         }
         #endregion
@@ -58,15 +57,22 @@ namespace ChechDatPlace.Controllers
         [HttpPost]
         public HttpResponseMessage UpdateOneUser(User[] UserData)
         {
-            
+
             HttpResponseMessage response;
+            var creds = this.Request.Headers.Where(i => i.Key == "Credentials").FirstOrDefault().Value;
+            if (Service.UserServices.AuthorizeUser(creds, CDPEnum.UserLevel.normal))
+            {
+                var result = Service.UserServices.UpdateOneUser(UserData);
 
-            var result = Service.UserServices.UpdateOneUser(UserData);
+                response = this.Request.CreateResponse(result.Status);
 
-            response = this.Request.CreateResponse(result.Status);
-
-            response.Content = new StringContent(result.Message);
-
+                response.Content = new StringContent(result.Message);
+            }
+            else
+            {
+                response = this.Request.CreateResponse(HttpStatusCode.Forbidden);
+                response.Content = new StringContent("You are not allowed to perform this action.");
+            }
             return response;
         }
         #endregion
@@ -77,13 +83,20 @@ namespace ChechDatPlace.Controllers
         public HttpResponseMessage DeleteAllUsers()
         {
             HttpResponseMessage response;
+            var creds = this.Request.Headers.Where(i => i.Key == "Credentials").FirstOrDefault().Value;
+            if (Service.UserServices.AuthorizeUser(creds, CDPEnum.UserLevel.normal))
+            {
+                var result = Service.UserServices.DeleteAllUsers();
 
-            var result = Service.UserServices.DeleteAllUsers();
+                response = this.Request.CreateResponse(result.Status);
 
-            response = this.Request.CreateResponse(result.Status);
-
-            response.Content = new StringContent(result.Message);
-
+                response.Content = new StringContent(result.Message);
+            }
+            else
+            {
+                response = this.Request.CreateResponse(HttpStatusCode.Forbidden);
+                response.Content = new StringContent("You are not allowed to perform this action.");
+            }
             return response;
         }
         #endregion
@@ -94,13 +107,20 @@ namespace ChechDatPlace.Controllers
         public HttpResponseMessage ConnectUser(string[] credentials)
         {
             HttpResponseMessage response;
+            var creds = this.Request.Headers.Where(i => i.Key == "Credentials").FirstOrDefault().Value;
+            if (Service.UserServices.AuthorizeUser(creds, CDPEnum.UserLevel.normal))
+            {
+                var result = Service.UserServices.ConnectUser(credentials);
 
-            var result = Service.UserServices.ConnectUser(credentials);
+                response = this.Request.CreateResponse(result.Status);
 
-            response = this.Request.CreateResponse(result.Status);
-
-            response.Content = new StringContent(result.Message);
-
+                response.Content = new StringContent(result.Message);
+            }
+            else
+            {
+                response = this.Request.CreateResponse(HttpStatusCode.Forbidden);
+                response.Content = new StringContent("You are not allowed to perform this action.");
+            }
             return response;
         }
 
