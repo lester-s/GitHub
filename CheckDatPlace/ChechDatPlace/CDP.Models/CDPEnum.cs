@@ -32,5 +32,29 @@ namespace CDP.Models
             normal = 1,
             admin
         }
+
+        public static PlaceType GetTypeFomString(string type)
+        {
+            type = type.ToUpper();
+            switch (type)
+            {
+                case "BAR":
+                    return PlaceType.Bar;
+                case "CLUB":
+                    return PlaceType.Club;
+                case "HOTEL":
+                    return PlaceType.Hotel;
+                case "MONUMENT":
+                    return PlaceType.Monument;
+                case "PUBLICGARDEN":
+                    return PlaceType.PublicGarden;
+                case "RESTAURANT":
+                    return PlaceType.Restaurant;
+                case "SPORT":
+                    return PlaceType.Sport;
+                default:
+                    return PlaceType.Bar;
+            }
+        }
     }
 }

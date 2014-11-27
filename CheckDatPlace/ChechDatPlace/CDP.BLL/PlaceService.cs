@@ -32,7 +32,7 @@ namespace CDP.BLL
             return opStatus;
         }
 
-        public List<Place> GetPlaceByUser(int userId)
+        public DBopMessage<List<Place>> GetPlaceByUser(int userId)
         {
             return new PlaceDAL().GetPlaceByUser(userId);
         }
@@ -54,6 +54,13 @@ namespace CDP.BLL
         {
             var opStatus = new PlaceDAL().DeleteOnPlace(place);
             return opStatus;
+        }
+
+        public DBopMessage<List<Place>> SearchOnePlace(string name, string city, string streetName, string type)
+        {
+            var placeType = CDPEnum.GetTypeFomString(type);
+            var place = new Place() {Address = new PlaceAddress(streetName,city), Name = name, Type = CDPEnum.GetTypeFomString(type)};
+            return new PlaceDAL().SearchOnePlace(place);
         }
     }
 }

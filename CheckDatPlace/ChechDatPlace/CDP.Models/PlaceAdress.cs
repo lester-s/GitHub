@@ -8,7 +8,7 @@ namespace CDP.Models
 {
     public class PlaceAddress
     {
-        public PlaceAddress(int number, string streetName, string cityName, int codePostal)
+        public PlaceAddress(string streetName, string cityName,int number = 0, int codePostal = default(int))
         {
             this.Number = number;
             this.StreetName = streetName;

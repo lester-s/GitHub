@@ -38,10 +38,21 @@ namespace ChechDatPlace.Controllers
         #region read
         [ActionName("GetPlaceByUser")]
         [HttpGet]
-        public List<Place> GetPlaceByUser(int userId)
+        public HttpResponseMessage GetPlaceByUser(int userId)
         {
-            //TODO return a HttpMessageResponse
-            return Service.PlaceServices.GetPlaceByUser(userId);
+            HttpResponseMessage response;
+            var creds = this.Request.Headers.Where(i => i.Key == "Credentials").FirstOrDefault().Value;
+            if (Service.UserServices.AuthorizeUser(creds, CDPEnum.UserLevel.normal))
+            {
+                var places = Service.PlaceServices.GetPlaceByUser(userId);
+                response = this.Request.CreateResponse<IEnumerable<Place>>(HttpStatusCode.OK, places.Value);
+            }
+            else
+            {
+                response = this.Request.CreateResponse(HttpStatusCode.Forbidden);
+                response.Content = new StringContent("You are not allowed to perform this action.");
+            }
+            return response;
         }
         #endregion
 
@@ -51,13 +62,20 @@ namespace ChechDatPlace.Controllers
         public HttpResponseMessage UpdateOnePlace(Place[] placeData)
         {
             HttpResponseMessage response;
+            var creds = this.Request.Headers.Where(i => i.Key == "Credentials").FirstOrDefault().Value;
+            if (Service.UserServices.AuthorizeUser(creds, CDPEnum.UserLevel.normal))
+            {
+                var result = Service.PlaceServices.UpdateOnePlace(placeData);
 
-            var result = Service.PlaceServices.UpdateOnePlace(placeData);
+                response = this.Request.CreateResponse(result.Status);
 
-            response = this.Request.CreateResponse(result.Status);
-
-            response.Content = new StringContent(result.Message);
-
+                response.Content = new StringContent(result.Message);
+            }
+            else
+            {
+                response = this.Request.CreateResponse(HttpStatusCode.Forbidden);
+                response.Content = new StringContent("You are not allowed to perform this action.");
+            }
             return response;
         }
         #endregion
@@ -68,13 +86,20 @@ namespace ChechDatPlace.Controllers
         public HttpResponseMessage DeleteOnePlace(Place place)
         {
             HttpResponseMessage response;
+            var creds = this.Request.Headers.Where(i => i.Key == "Credentials").FirstOrDefault().Value;
+            if (Service.UserServices.AuthorizeUser(creds, CDPEnum.UserLevel.normal))
+            {
+                var result = Service.PlaceServices.DeleteOnePlace(place);
 
-            var result = Service.PlaceServices.DeleteOnePlace(place);
+                response = this.Request.CreateResponse(result.Status);
 
-            response = this.Request.CreateResponse(result.Status);
-
-            response.Content = new StringContent(result.Message);
-
+                response.Content = new StringContent(result.Message);
+            }
+            else
+            {
+                response = this.Request.CreateResponse(HttpStatusCode.Forbidden);
+                response.Content = new StringContent("You are not allowed to perform this action.");
+            }
             return response;
         }
         #endregion
@@ -88,7 +113,7 @@ namespace ChechDatPlace.Controllers
 
             var place = new Place()
             {
-                Address = new PlaceAddress(12, "general leclerc", "Paris", 75000),
+                Address = new PlaceAddress("general leclerc", "Paris",12, 75000),
                 Name = "MYUPDATEBAR",
                 Rate = 0,
                 Type = CDPEnum.PlaceType.Bar,
@@ -99,7 +124,7 @@ namespace ChechDatPlace.Controllers
             { 
                 new Place() 
                 {
-                Address = new PlaceAddress(12,"general leclerc","Paris", 75000),
+                Address = new PlaceAddress("general leclerc", "Paris",12, 75000),
                 Name = "MyBar",
                 Rate = 0,
                 Type = CDPEnum.PlaceType.Bar,
@@ -107,7 +132,7 @@ namespace ChechDatPlace.Controllers
             },
             new Place()
             {
-                Address = new PlaceAddress(12,"general leclerc","Paris", 75000),
+                Address = new PlaceAddress("general leclerc", "Paris",12, 75000),
                 Name = "MyUpdateBar",
                 Rate = 0,
                 Type = CDPEnum.PlaceType.Bar,
@@ -115,6 +140,25 @@ namespace ChechDatPlace.Controllers
             }};
             return Json.Encode(place);
 
+        }
+
+        [ActionName("SearchOnePlace")]
+        [HttpGet]
+        public HttpResponseMessage SearchOnePlace(string name, string city, string streetName, string type)
+        {
+            HttpResponseMessage response;
+            var creds = this.Request.Headers.Where(i => i.Key == "Credentials").FirstOrDefault().Value;
+            if (Service.UserServices.AuthorizeUser(creds, CDPEnum.UserLevel.normal))
+            {
+                var places = Service.PlaceServices.SearchOnePlace(name, city, streetName, type);
+                response = this.Request.CreateResponse<IEnumerable<Place>>(HttpStatusCode.OK, places.Value);
+            }
+            else
+            {
+                response = this.Request.CreateResponse(HttpStatusCode.Forbidden);
+                response.Content = new StringContent("You are not allowed to perform this action.");
+            }
+            return response;
         }
         #endregion
     }

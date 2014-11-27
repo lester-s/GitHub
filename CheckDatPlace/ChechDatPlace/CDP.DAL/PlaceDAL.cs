@@ -63,9 +63,25 @@ namespace CDP.DAL
         }
         #endregion
 
-        public List<Place> GetPlaceByUser(int userId)
+        public DBopMessage<List<Place>> GetPlaceByUser(int userId)
         {
-            return db.Places.Where(p => p.UserID == userId).ToList();
+            try
+            {
+                var places = db.Places.Where(p => p.UserID == userId).ToList();
+
+                if (places != null)
+                {
+                    return new DBopMessage<List<Place>>(HttpStatusCode.OK, "request to get places by user succeed !!!", places);
+                }
+                else
+                {
+                    return new DBopMessage<List<Place>>(HttpStatusCode.InternalServerError, "No places to get", null);
+                }
+            }
+            catch (Exception)
+            {
+                return new DBopMessage<List<Place>>(HttpStatusCode.InternalServerError, "Something went wrong on getting places", null);
+            }
         }
 
         public DBopMessage UpdateOnePlace(Place beforeData, Place afterData)
@@ -129,6 +145,30 @@ namespace CDP.DAL
             catch (Exception)
             {
                 return new DBopMessage(HttpStatusCode.InternalServerError, "Something went wrong on deleting the place");
+            }
+        }
+
+        public DBopMessage<List<Place>> SearchOnePlace(Place place)
+        {
+            try
+            {
+                var places = db.Places.Where(p => (p.Name == place.Name) 
+                    && (p.Type == place.Type) 
+                    && (p.Address.CityName == place.Address.CityName)
+                    && (p.Address.StreetName == place.Address.StreetName)).ToList();
+
+                if (places != null)
+                {
+                    return new DBopMessage<List<Place>>(HttpStatusCode.OK, "request to search one place succeed !!!", places);
+                }
+                else
+                {
+                    return new DBopMessage<List<Place>>(HttpStatusCode.InternalServerError, "No places found", null);
+                }
+            }
+            catch (Exception)
+            {
+                return new DBopMessage<List<Place>>(HttpStatusCode.InternalServerError, "Something went wrong on finding places", null);
             }
         }
     }
